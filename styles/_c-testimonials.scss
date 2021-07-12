@@ -1,0 +1,71 @@
+.c-testimonials {
+  article {
+    width: calc(min(90%, 92rem));
+    margin: 0 auto;
+    min-height: 80vh;
+    text-align: center;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 4rem 0;
+
+    @include breakpoint(lg) {
+      padding: 0;
+    }
+
+    h4 {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.45rem;
+      color: var(--colorBlue100);
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6rem;
+      place-items: flex-end;
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      li {
+        flex-direction: column;
+
+        @include breakpoint(lg) {
+          gap: 4rem;
+        }
+
+        div.mask {
+          border-radius: 50%;
+          overflow: hidden;
+        }
+
+        img {
+          height: rem(80);
+        }
+
+        p {
+          color: var(--colorDesaturatedCyan);
+        }
+
+        div.uc-flexBox {
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        strong {
+          font-family: var(--fontTitle);
+          color: var(--colorBlue400);
+          font-weight: 900;
+          @include fontTM1x5;
+        }
+
+        small {
+          @include fontTM1;
+          color: var(--colorBlue100);
+        }
+      }
+    }
+  }
+}

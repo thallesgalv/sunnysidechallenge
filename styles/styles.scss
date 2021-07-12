@@ -1,0 +1,86 @@
+// ==========================================================================
+// Imports: Variables & Mixins
+// ==========================================================================
+@import "_variables";
+@import "_mixins";
+
+// ==========================================================================
+// CSS Reset
+// ==========================================================================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+p,
+span,
+a,
+h1,
+h2,
+ul,
+img {
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-weight: normal;
+  font-size: 100%;
+
+  a {
+    text-decoration: none;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  img[src$=".svg"] {
+    height: auto;
+    max-width: none;
+    width: 100%;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+// ==========================================================================
+// Global
+// ==========================================================================
+body {
+  font-family: var(--fontBody);
+  @include fontTM1x5;
+
+  //Utility-Class
+  .uc-flexBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  h1,h2,h3,h4 {
+    font-family: var(--fontTitle);
+    font-weight: 900;
+  }
+}
+
+// ==========================================================================
+// Components
+// ==========================================================================
+@import "c-header";
+@import "c-hero";
+@import "c-content";
+@import "c-testimonials";
+@import "c-gallery";
+@import "c-footer";
+
+// ==========================================================================
+// Pages
+// ==========================================================================
+@import "p-home";

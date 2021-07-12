@@ -1,0 +1,149 @@
+.c-content {
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-content: center;
+    place-items: center;
+  }
+
+  &__gridText {
+    width: calc(min(90%, 27rem));
+    flex-direction: column;
+    margin: 2rem auto;
+    text-align: center;
+
+    @include breakpoint(md) {
+      align-items: flex-start !important;
+      text-align: left;
+      margin: 0 auto;
+    }
+
+    h2 {
+      @include fontTM4;
+      color: var(--colorBlue400);
+
+      @include breakpoint(md) {
+        font-size: rem(38);
+      }
+    }
+
+    p {
+      color: var(--colorBlue100);
+    }
+
+    a {
+      font-family: var(--fontTitle);
+      text-transform: uppercase;
+      color: var(--colorBlue400);
+      position: relative;
+
+      &:after {
+        content: "";
+        width: calc(100% + 1.5rem);
+        height: 40%;
+        border-radius: 5rem;
+        z-index: -1;
+        position: absolute;
+        left: -0.75rem;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0.5;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover:after {
+        opacity: 1;
+      }
+    }
+
+    a.underline--yellow::after {
+      background-color: var(--colorYellow);
+    }
+    a.underline--red::after {
+      background-color: var(--colorRed);
+    }
+  }
+
+  &__img,
+  &__gridText {
+    height: rem(400);
+
+    @include breakpoint(md) {
+      height: 600px;
+    }
+    @include breakpoint(2xl) {
+      height: 800px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    > article {
+      width: calc(min(90%, 27rem));
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 3rem;
+
+      @include breakpoint(lg) {
+        margin-bottom: 4rem;
+      }
+
+      > h3 {
+        @include fontTM3;
+        color: var(--colorDesaturatedCyan);
+        margin: 1.5rem auto;
+      }
+
+      > p {
+        color: var(--colorDesaturatedCyan);
+      }
+    }
+  }
+
+  &__img--alt {
+    @media (max-width: 767px) {
+      height: 85vh;
+    }
+  }
+}
+
+.imgTransform {
+  background: no-repeat center/cover
+    url("../assets/images/mobile/image-transform.jpg");
+  @include breakpoint(lg) {
+    background: no-repeat right/cover
+      url("../assets/images/desktop/image-transform.jpg");
+  }
+}
+.imgStandOut {
+  background: no-repeat center/cover
+    url("../assets/images/mobile/image-stand-out.jpg");
+
+  @include breakpoint(lg) {
+    background: no-repeat left/cover
+      url("../assets/images/desktop/image-stand-out.jpg");
+  }
+}
+.imgGraphicDesign {
+  background: no-repeat center/cover
+    url("../assets/images/mobile/image-graphic-design.jpg");
+
+  @include breakpoint(lg) {
+    background: no-repeat center/cover
+      url("../assets/images/desktop/image-graphic-design.jpg");
+  }
+}
+.imgPhotography {
+  background: no-repeat center/cover
+    url("../assets/images/mobile/image-photography.jpg");
+
+  @include breakpoint(lg) {
+    background: no-repeat center/cover
+      url("../assets/images/desktop/image-photography.jpg");
+  }
+}

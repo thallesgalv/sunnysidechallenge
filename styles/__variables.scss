@@ -1,0 +1,41 @@
+// ==========================================================================
+// Fonts
+// ==========================================================================
+
+:root {
+  --fontTitle: "Fraunces", serif;
+  --fontBody: "Barlow", sans-serif;
+}
+
+// ==========================================================================
+// Sizes & Spacing
+// ==========================================================================
+
+:root {
+  --menuHeight: 5rem; //80px;
+  @media (max-width: 768px) {
+    --menuHeight: 4rem; //64px
+  }
+  --footerHeight: 4rem; //64px
+  @media (max-width: 768px) {
+    --footerHeight: auto;
+  }
+
+  --spacing: 1rem; //16px
+}
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+:root {
+  --colorRed: hsl(7, 99%, 70%);
+  --colorYellow: hsl(51, 100%, 49%);
+  --colorDesaturatedCyan: hsl(167, 40%, 24%); //(graphic design text)
+  --colorDarkCyan: hsl(168, 34%, 41%); //(footer)
+  
+  --colorBlue100: hsl(210, 4%, 67%);
+  --colorBlue200: hsl(232, 10%, 55%);
+  --colorBlue300: hsl(198, 62%, 26%); //(photography text)
+  --colorBlue400: hsl(212, 27%, 19%);
+}

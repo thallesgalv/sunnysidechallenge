@@ -1,0 +1,42 @@
+.c-hero {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+
+  background: no-repeat center/cover
+    url("../assets/images/mobile/image-header.jpg");
+
+  @include breakpoint(lg) {
+    background-image: url("../assets/images/desktop/image-header.jpg");
+  }
+
+  &__container {
+    width: 100%;
+    height: 80vh;
+    margin-top: auto;
+
+    > h1 {
+      text-align: center;
+      color: #fff;
+      @include fontTM4;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      margin-bottom: 10rem;
+
+      @include breakpoint(md) {
+        @include fontTM7;
+        margin-bottom: 14rem;
+      }
+    }
+
+    svg {
+      animation: point 2s infinite ease-in-out;
+
+      @keyframes point {
+        50% {
+          transform: translateY(3rem);
+        }
+      }
+    }
+  }
+}

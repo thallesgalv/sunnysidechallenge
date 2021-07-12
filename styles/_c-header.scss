@@ -1,0 +1,113 @@
+.c-header {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+
+  nav {
+    justify-content: space-between;
+    padding: 2rem;
+
+    @include breakpoint(lg) {
+      padding: 2rem 3rem;
+    }
+
+    ul {
+      display: none;
+      gap: 3rem;
+
+      @include breakpoint(lg) {
+        display: flex;
+      }
+    }
+
+    ul.active {
+      display: block;
+      background: #fff;
+      width: 100%;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: rem(30);
+        height: rem(30);
+        position: absolute;
+        top: -30px;
+        right: 0;
+        background: #fff;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+      }
+
+      li {
+        padding: 1rem 0;
+      }
+
+      a {
+        color: var(--colorBlue200);
+      }
+
+      li:last-child {
+        width: fit-content;
+        margin: 0 auto;
+
+        > a {
+          background: var(--colorYellow);
+        }
+      }
+    }
+
+    a {
+      color: #fff;
+    }
+
+    li:last-child {
+      > a {
+        color: var(--colorBlue400);
+        font-family: var(--fontTitle);
+        text-transform: uppercase;
+        padding: 0.75rem 1.75rem;
+        background-color: #fff;
+        border-radius: 4rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+
+    .menuHamburguer {
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+  }
+}
+
+header.active {
+  background: #fff;
+
+  svg,
+  path,
+  a {
+    fill: #2f7867;
+    color: #2f7867;
+  }
+
+  li:last-child {
+    > a {
+      background-color: #2f7867;
+      color: #fff;
+      border: 1px solid #fff;
+
+      &:hover {
+        color: #2f7867;
+        background-color: #fff;
+        border: 1px solid #2f7867;
+      }
+    }
+  }
+}
